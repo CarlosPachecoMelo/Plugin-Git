@@ -1,4 +1,4 @@
-package br.univali.portugol.plugin.exemplo;
+package br.univali.portugol.plugin.git;
 
 import br.univali.ps.plugins.base.VisaoPlugin;
 import java.awt.CardLayout;
@@ -6,15 +6,14 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author Luiz Fernando Noschang
+ * @author Cadu Pacheco
+ * @author Chrystian Batista
  */
-public final class VisaoPluginExemplo extends VisaoPlugin
-{
+public final class VisaoPluginGit extends VisaoPlugin {
     private final JPanel painelInicial;
     private final JPanel painelImagem;
 
-    public VisaoPluginExemplo(PluginExemplo plugin)
-    {
+    public VisaoPluginGit(PluginGit plugin) {
         super(plugin);
         initComponents();
 
@@ -25,19 +24,16 @@ public final class VisaoPluginExemplo extends VisaoPlugin
         add(painelImagem, painelImagem.getName());
     }
 
-    private void exibirPainel(String nome)
-    {
+    private void exibirPainel(String nome) {
         CardLayout layout = (CardLayout) getLayout();
         layout.show(this, nome);
     }
 
-    public void exibirPainelInicial()
-    {
+    public void exibirPainelInicial() {
         exibirPainel(painelInicial.getName());
     }
 
-    public void exibirPainelImagem()
-    {
+    public void exibirPainelImagem() {
         exibirPainel(painelImagem.getName());
     }
 

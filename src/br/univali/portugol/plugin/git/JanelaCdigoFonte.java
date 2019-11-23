@@ -1,28 +1,24 @@
-package br.univali.portugol.plugin.exemplo;
+package br.univali.portugol.plugin.git;
 
 import javax.swing.SwingUtilities;
 
 /**
  *
- * @author Luiz Fernando Noschang
+ * @author Cadu Pacheco
+ * @author Chrystian Batista
  */
-public class JanelaCdigoFonte extends javax.swing.JDialog
-{
-    public JanelaCdigoFonte()
-    {
+public class JanelaCdigoFonte extends javax.swing.JDialog {
+    public JanelaCdigoFonte() {
         initComponents();
         setModal(true);
     }
     
-    public void setCodigoFonte(String codigoFonte)
-    {
+    public void setCodigoFonte(String codigoFonte) {
         textAreaCodigo.setText(codigoFonte);
-        
-        SwingUtilities.invokeLater(new Runnable()
-        {
+
+        SwingUtilities.invokeLater(new Runnable() {
             @Override
-            public void run()
-            {
+            public void run() {
                 painelRolagem.getVerticalScrollBar().setValue(0);
                 painelRolagem.getHorizontalScrollBar().setValue(0);
             }
@@ -31,8 +27,7 @@ public class JanelaCdigoFonte extends javax.swing.JDialog
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         rotuloDescricao = new javax.swing.JLabel();
         painelRolagem = new javax.swing.JScrollPane();
@@ -50,11 +45,9 @@ public class JanelaCdigoFonte extends javax.swing.JDialog
         painelRolagem.setViewportView(textAreaCodigo);
 
         botaoOK.setText("OK");
-        botaoOK.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        botaoOK.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        botaoOK.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        botaoOK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoOKActionPerformed(evt);
             }
         });

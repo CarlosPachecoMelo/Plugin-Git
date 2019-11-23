@@ -1,45 +1,37 @@
-package br.univali.portugol.plugin.exemplo;
+package br.univali.portugol.plugin.git;
 
-import br.univali.portugol.plugin.exemplo.acoes.AcaoPersonalizadaDinamica;
+import br.univali.portugol.plugin.git.acoes.AcaoPersonalizadaDinamica;
+
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 
 /**
  *
- * @author Luiz Fernando Noschang
+ * @author Cadu Pacheco
+ * @author Chrystian Batista
  */
-public class PainelImagem extends javax.swing.JPanel
-{
-    private final PluginExemplo plugin;
+public class PainelImagem extends javax.swing.JPanel {
+    private final PluginGit plugin;
     private final AcaoPersonalizadaDinamica acao = new AcaoPersonalizadaDinamica();
 
-    public PainelImagem(final PluginExemplo plugin)
-    {
+    public PainelImagem(final PluginGit plugin) {
         initComponents();
         this.plugin = plugin;
 
-        checkboxExibir.addItemListener(new ItemListener()
-        {
+        checkboxExibir.addItemListener(new ItemListener() {
             @Override
-            public void itemStateChanged(ItemEvent e)
-            {
-                if (checkboxExibir.isSelected())
-                {
+            public void itemStateChanged(ItemEvent e) {
+                if (checkboxExibir.isSelected()) {
                     plugin.getUtilizador().instalarAcaoPlugin(plugin, acao);
-                }
-                else
-                {
+                } else {
                     plugin.getUtilizador().desinstalarAcaoPlugin(plugin, acao);
                 }
             }
         });
-        
-        
-        checkboxAtivar.addItemListener(new ItemListener()
-        {
+
+        checkboxAtivar.addItemListener(new ItemListener() {
             @Override
-            public void itemStateChanged(ItemEvent e)
-            {
+            public void itemStateChanged(ItemEvent e) {
                 acao.setEnabled(checkboxAtivar.isSelected());
             }
         });
@@ -47,8 +39,7 @@ public class PainelImagem extends javax.swing.JPanel
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents()
-    {
+    private void initComponents() {
 
         painelConteudo = new javax.swing.JPanel();
         rotuloDescricao1 = new javax.swing.JLabel();
@@ -67,11 +58,11 @@ public class PainelImagem extends javax.swing.JPanel
         rotuloDescricao1.setBorder(javax.swing.BorderFactory.createEmptyBorder(8, 8, 8, 8));
 
         checkboxExibir.setText("Exibir ação");
-        checkboxExibir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        checkboxExibir.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         checkboxAtivar.setSelected(true);
         checkboxAtivar.setText("Ativar ação");
-        checkboxAtivar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        checkboxAtivar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout painelConteudoLayout = new javax.swing.GroupLayout(painelConteudo);
         painelConteudo.setLayout(painelConteudoLayout);
@@ -101,11 +92,9 @@ public class PainelImagem extends javax.swing.JPanel
         painelBotoes.setPreferredSize(new java.awt.Dimension(502, 60));
 
         botaoAvancar.setText("Voltar");
-        botaoAvancar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        botaoAvancar.addActionListener(new java.awt.event.ActionListener()
-        {
-            public void actionPerformed(java.awt.event.ActionEvent evt)
-            {
+        botaoAvancar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        botaoAvancar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoAvancarActionPerformed(evt);
             }
         });
@@ -134,10 +123,9 @@ public class PainelImagem extends javax.swing.JPanel
 
     private void botaoAvancarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_botaoAvancarActionPerformed
     {//GEN-HEADEREND:event_botaoAvancarActionPerformed
-        VisaoPluginExemplo visao = (VisaoPluginExemplo) plugin.getVisao();
+        VisaoPluginGit visao = (VisaoPluginGit) plugin.getVisao();
         visao.exibirPainelInicial();
     }//GEN-LAST:event_botaoAvancarActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoAvancar;

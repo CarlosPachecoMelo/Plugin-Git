@@ -1,14 +1,16 @@
 {
-	"nome": "Plugin-Exemplo",
+	"nome": "Plugin-Git",
 	"versao": "1.0.0",
-	"classe": "br.univali.portugol.plugin.exemplo.PluginExemplo",
-	"descricao": "Plugin de exemplo, para ilustrar o desenvolvimento de plugins no Portugol Studio",
-	"autores": [{
-			"nome": "Luiz Fernando Noschang",
-			"email": "noschang@univali.br"
-		}, {
-			"nome": "Fillipi Domingos Pelz",
-			"email": "fillipi.pelz@univali.br"
-		}
+	"classe": "br.univali.portugol.plugin.git.PluginGit",
+	"descricao": "Plugin de integreação do Portugol Studio com a ferramenta de controle de versão Git",
+	"autores": [
+            {
+                "nome": "Carlos Eduardo Pacheco de Melo",
+                "email": "carlos.pacheco.melo@edu.univali.br"
+            },
+            {
+                "nome": "Chrystian Vinicius Batista",
+                "email": "chrystian@edu.univali.br"
+            }
 	]
 }

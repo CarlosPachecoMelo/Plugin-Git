@@ -1,17 +1,16 @@
-package br.univali.portugol.plugin.exemplo;
+package br.univali.portugol.plugin.git;
 
 /**
  *
- * @author Luiz Fernando Noschang
+ * @author Cadu Pacheco
+ * @author Chrystian Batista
  */
-public class PainelInicial extends javax.swing.JPanel
-{
+public class PainelInicial extends javax.swing.JPanel {
     private final JanelaCdigoFonte janelaCdigoFonte = new JanelaCdigoFonte();
-    private final PluginExemplo plugin;
+    private final PluginGit plugin;
     private final PainelFlutuante painelFlutuante;
 
-    public PainelInicial(PluginExemplo plugin)
-    {
+    public PainelInicial(PluginGit plugin) {
         initComponents();
         this.plugin = plugin;
         this.painelFlutuante = new PainelFlutuante(plugin, this);
@@ -66,7 +65,7 @@ public class PainelInicial extends javax.swing.JPanel
         painelBotoes.setPreferredSize(new java.awt.Dimension(293, 60));
 
         botaoAvancar.setText("Avançar");
-        botaoAvancar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botaoAvancar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         botaoAvancar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoAvancarActionPerformed(evt);
@@ -74,7 +73,7 @@ public class PainelInicial extends javax.swing.JPanel
         });
 
         botaoTestar.setText("Testar");
-        botaoTestar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        botaoTestar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         botaoTestar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botaoTestarActionPerformed(evt);
@@ -118,22 +117,17 @@ public class PainelInicial extends javax.swing.JPanel
 
     private void botaoAvancarActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_botaoAvancarActionPerformed
     {//GEN-HEADEREND:event_botaoAvancarActionPerformed
-        VisaoPluginExemplo visao = (VisaoPluginExemplo) plugin.getVisao();
+        VisaoPluginGit visao = (VisaoPluginGit) plugin.getVisao();
         visao.exibirPainelImagem();
     }//GEN-LAST:event_botaoAvancarActionPerformed
 
     private void botaoPainelFlutuanteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoPainelFlutuanteActionPerformed
-        
-        if (botaoPainelFlutuante.isSelected())
-        {
+        if (botaoPainelFlutuante.isSelected()) {
             plugin.getUtilizador().exibirPainelFlutuante(botaoPainelFlutuante, painelFlutuante, true);
-        }
-        else
-        {
+        } else {
             plugin.getUtilizador().ocultarPainelFlutuante();
         }
     }//GEN-LAST:event_botaoPainelFlutuanteActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoAvancar;
@@ -145,17 +139,13 @@ public class PainelInicial extends javax.swing.JPanel
     private javax.swing.JSeparator separador;
     // End of variables declaration//GEN-END:variables
 
-    public void alternarPainelFlutuante() 
-    {
-        if (botaoPainelFlutuante.isSelected())
-        {
+    public void alternarPainelFlutuante()  {
+        if (botaoPainelFlutuante.isSelected()) {
             plugin.getUtilizador().ocultarPainelFlutuante();
-        }
-        else
-        {
+        } else {
             plugin.getUtilizador().exibirPainelFlutuante(botaoPainelFlutuante, painelFlutuante, true);
         }
-        
+
         botaoPainelFlutuante.setSelected(!botaoPainelFlutuante.isSelected());
     }
 }

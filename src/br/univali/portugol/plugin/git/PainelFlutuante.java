@@ -1,26 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package br.univali.portugol.plugin.exemplo;
+package br.univali.portugol.plugin.git;
 
 /**
  *
- * @author Luiz Fernando Noschang
+ * @author Cadu Pacheco
+ * @author Chrystian Batista
  */
-public final class PainelFlutuante extends javax.swing.JPanel 
-{
+public final class PainelFlutuante extends javax.swing.JPanel  {
     private final PainelInicial painelInicial;
-    private final PluginExemplo plugin;
-    
-    public PainelFlutuante(PluginExemplo pluginExemplo, PainelInicial painelInicial) 
-    {
+    private final PluginGit plugin;
+
+    public PainelFlutuante(PluginGit pluginGit, PainelInicial painelInicial) {
         initComponents();
         this.painelInicial = painelInicial;
-        this.plugin = pluginExemplo;
+        this.plugin = pluginGit;
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -89,16 +83,13 @@ public final class PainelFlutuante extends javax.swing.JPanel
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
-        painelInicial.alternarPainelFlutuante();        
+        painelInicial.alternarPainelFlutuante();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
         plugin.getUtilizador().destacarTrechoCodigoFonte(0, 0, 10);
         plugin.getUtilizador().ocultarPainelFlutuante();
     }//GEN-LAST:event_jButton2ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

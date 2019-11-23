@@ -1,4 +1,4 @@
-package br.univali.portugol.plugin.exemplo.acoes;
+package br.univali.portugol.plugin.git.acoes;
 
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -11,35 +11,29 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author Luiz Fernando Noschang
+ * @author Cadu Pacheco
+ * @author Chrystian Batista
  */
-public final class AcaoPersonalizadaDinamica extends AbstractAction
-{
-    public AcaoPersonalizadaDinamica()
-    {
+public final class AcaoPersonalizadaDinamica extends AbstractAction {
+    public AcaoPersonalizadaDinamica() {
         super("Ação personalizada dinâmica", carregarIcone());
     }
 
-    private static Icon carregarIcone()
-    {
-        try
-        {
+    private static Icon carregarIcone() {
+        try {
             //Carregue aqui o caminho do icone do botao do plugin que vai estar disponível
-            String caminho = "br/univali/portugol/plugin/exemplo/imagens/music.png";
+            String caminho = "br/univali/portugol/plugin/git/imagens/music.png";
             Image imagem = ImageIO.read(AcaoPersonalizadaDinamica.class.getClassLoader().getResourceAsStream(caminho));
 
             return new ImageIcon(imagem);
-        }
-        catch (IOException ex)
-        {
+        } catch (IOException ex) {
             return null;
         }
     }
 
     @Override
-    public void actionPerformed(ActionEvent e)
-    {
+    public void actionPerformed(ActionEvent e) {
         //Aqui estará o que seu botão fará, a ação dele
-        JOptionPane.showMessageDialog(null, "O plugin executou uma ação personalizada dinâmica!!", "Plugin Exemplo", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "O plugin executou uma ação personalizada dinâmica!!", "Plugin Git", JOptionPane.INFORMATION_MESSAGE);
     }
 }
