@@ -1,6 +1,6 @@
 {
 	"nome": "Plugin-Git",
-	"versao": "1.0.0",
+	"versao": "0.0.1",
 	"classe": "br.univali.portugol.plugin.git.PluginGit",
 	"descricao": "Plugin de integreação do Portugol Studio com a ferramenta de controle de versão Git",
 	"autores": [

@@ -1,8 +1,11 @@
 package br.univali.portugol.plugin.git;
 
-import br.univali.portugol.plugin.git.acoes.AcaoPersonalizadaDinamica;
+import br.univali.portugol.plugin.git.acoes.AcaoAdicionarRemoto;
+import br.univali.portugol.plugin.git.acoes.AcaoCommit;
+import br.univali.portugol.plugin.git.acoes.AcaoInicializarRepositorio;
+import br.univali.portugol.plugin.git.acoes.AcaoPull;
+import br.univali.portugol.plugin.git.acoes.AcaoPush;
 
-import br.univali.portugol.plugin.git.acoes.AcaoPersonalizadaEstatica;
 import br.univali.portugol.plugin.git.biblioteca.Git;
 import br.univali.ps.plugins.base.GerenciadorPlugins;
 import br.univali.ps.plugins.base.Plugin;
@@ -26,9 +29,12 @@ public final class PluginGit extends Plugin {
     @Override
     protected void inicializar(UtilizadorPlugins utilizador) {
         this.utilizador = utilizador;
-        //Aqui você deve instalar todas as ações que seu plugin fará, ou seja, seus botões
-        GerenciadorPlugins.getInstance().instalarAcaoPlugin(this, new AcaoPersonalizadaEstatica());
-        GerenciadorPlugins.getInstance().instalarAcaoPlugin(this, new AcaoPersonalizadaDinamica());
+        GerenciadorPlugins.getInstance().instalarAcaoPlugin(this, new AcaoInicializarRepositorio());
+        GerenciadorPlugins.getInstance().instalarAcaoPlugin(this, new AcaoAdicionarRemoto());
+        GerenciadorPlugins.getInstance().instalarAcaoPlugin(this, new AcaoCommit());
+        GerenciadorPlugins.getInstance().instalarAcaoPlugin(this, new AcaoPush());
+        GerenciadorPlugins.getInstance().instalarAcaoPlugin(this, new AcaoPull());
+
         this.utilizador.registrarBiblioteca(Git.class);
     }
 
